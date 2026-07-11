@@ -5,7 +5,7 @@ Upload any messy CSV of leads and this app uses an LLM to map arbitrary column l
 The hard part is not parsing CSV. It is reliably mapping unpredictable, inconsistent column names and value formats (Facebook exports, Google Ads exports, real-estate CRM dumps, hand-made spreadsheets) into one clean schema, and never trusting the model to enforce the rules that must always hold.
 
 **Live demo:** _add your Vercel URL here after deploy_
-**AI model:** Google `gemini-2.5-flash` (default), or any OpenRouter model.
+**AI model:** Google `gemini-flash-latest` (default), or any OpenRouter model.
 
 ---
 
