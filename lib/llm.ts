@@ -24,7 +24,7 @@ class GeminiProvider implements LLMProvider {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) throw new Error("GEMINI_API_KEY is not set");
     this.client = new GoogleGenAI({ apiKey });
-    this.model = process.env.GEMINI_MODEL ?? "gemini-flash-latest";
+    this.model = process.env.GEMINI_MODEL ?? "gemini-2.5-flash-lite";
   }
 
   async generateJson<T>(prompt: string, zodSchema: z.ZodType<T>): Promise<T> {
