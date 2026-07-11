@@ -1,0 +1,52 @@
+Lead Date,Client Name,Email,Contact Number,Alt Contact,Company,Location,Lead Status,Source,Possession,Remarks,Assigned To
+2026-05-01 09:15:00,Aditya Rao,aditya.rao@gmail.com,+919876500001,,Rao Realty,Mumbai,GOOD_LEAD_FOLLOW_UP,eden_park,Dec 2027,Wants a 3BHK near the park,ravi@team.com
+2026-05-01 10:20:00,Neha Verma,neha.verma@yahoo.com,9876500002,,,Pune,DID_NOT_CONNECT,meridian_tower,Ready to move,Called twice no answer,ravi@team.com
+02/05/2026,Karan Mehta,karan.mehta@outlook.com;karan.alt@work.com,+91 98765 00003,9876500013,Mehta Group,Delhi,Hot Lead,varah_swamy,2028,Interested but negotiating price,priya@team.com
+2026-05-02 14:05:00,Priya Singh,,9988776655,,Singh Enterprises,Bangalore,SALE_DONE,sarjapur_plots,Immediate,"Deal closed, onboarding started",priya@team.com
+May 3 2026,Rahul Kapoor,rahul.kapoor@gmail.com,+91-98765-00005,,,Hyderabad,BAD_LEAD,leads_on_demand,,Not interested at all,ravi@team.com
+2026-05-03 11:30:00,Sunita Iyer,sunita.iyer@gmail.com,919876500006,,Iyer Estates,Chennai,GOOD_LEAD_FOLLOW_UP,eden_park,Mar 2027,"Prefers a corner unit, high floor",neha@team.com
+2026-05-04,Mohan Das,mohan.das@company.co,09876500007,,Das & Co,Kolkata,Interested,tower one,Q3 2027,Follow up next week,neha@team.com
+2026-05-04 16:45:00,Ghost Lead,,,,No Contact Realty,Ahmedabad,,,,,ravi@team.com
+2026-05-05 08:00:00,Ananya Reddy,ananya.reddy@gmail.com,+919876500009,9876500019,Reddy Homes,Hyderabad,GOOD_LEAD_FOLLOW_UP,meridian_tower,2027,"Budget 1.2 Cr
+Wants site visit this weekend",priya@team.com
+05/05/2026,Vikram Nair,vikram.nair@gmail.com,9876500010,,,Kochi,DID_NOT_CONNECT,eden_park,Ready,Number switched off,neha@team.com
+2026-05-06 10:10:00,Deepa Menon,deepa.menon@gmail.com,+91 9876500011,,Menon Realty,Trivandrum,SALE_DONE,sarjapur_plots,Immediate,Payment received,ravi@team.com
+2026-05-06 12:00:00,No Email No Phone,,,,Blank Corp,Jaipur,Warm,,,Missing all contact info,priya@team.com
+2026-05-07,Sanjay Gupta,sanjay.gupta@gmail.com,9876500012,9876500022,Gupta Ventures,Lucknow,GOOD_LEAD_FOLLOW_UP,varah_swamy,2029,Has two contact numbers,neha@team.com
+2026-05-07 15:20:00,Meera Joshi,meera.joshi@gmail.com,+919876500014,,Joshi Group,Nagpur,BAD_LEAD,leads_on_demand,,Budget too low for our projects,ravi@team.com
+07-05-2026,Arjun Pillai,arjun.pillai@gmail.com,919876500015,,,Coimbatore,Interested,eden_park,Dec 2026,Wants brochure emailed,priya@team.com
+2026-05-08 09:45:00,Kavya Rao,kavya.rao@gmail.com,+91 98765 00016,,Rao Realty,Mumbai,GOOD_LEAD_FOLLOW_UP,meridian_tower,2027,Referred by Aditya Rao,neha@team.com
+2026-05-08 11:15:00,Rohit Sharma,rohit.sharma@gmail.com; rohit.s@work.io,09876500017,,Sharma Estates,Delhi,SALE_DONE,sarjapur_plots,Immediate,"Closed, two emails on file",ravi@team.com
+2026-05-09,Isha Agarwal,isha.agarwal@gmail.com,9876500018,,,Indore,DID_NOT_CONNECT,varah_swamy,Ready,Left voicemail,priya@team.com
+2026-05-09 13:30:00,Faizan Khan,faizan.khan@gmail.com,+919876500020,9876500030,Khan Builders,Bhopal,GOOD_LEAD_FOLLOW_UP,eden_park,2028,Second number is office line,neha@team.com
+09/05/2026,Tara Bose,tara.bose@gmail.com,9876500021,,Bose Realty,Kolkata,Hot,tower two,Q1 2028,Very keen wants urgent callback,ravi@team.com
+2026-05-10 10:00:00,Nikhil Jain,,9876500023,,Jain Group,Surat,BAD_LEAD,leads_on_demand,,Only phone no email provided,priya@team.com
+2026-05-10 14:50:00,Pooja Shah,pooja.shah@gmail.com,+91-98765-00024,,,Rajkot,GOOD_LEAD_FOLLOW_UP,meridian_tower,2027,Comparing with competitor,neha@team.com
+2026-05-11,Aman Verma,aman.verma@gmail.com,919876500025,,Verma Ventures,Kanpur,Interested,eden_park,Mar 2028,Asked for payment plan,ravi@team.com
+2026-05-11 16:20:00,Ritu Malhotra,ritu.malhotra@gmail.com,9876500026,9876500036,Malhotra Realty,Chandigarh,SALE_DONE,sarjapur_plots,Immediate,Booking amount paid,priya@team.com
+2026-05-12 09:30:00,Skip Me,,,,Empty Leads Inc,Patna,,,,No email and no phone here,neha@team.com
+2026-05-12 11:40:00,Harsh Vardhan,harsh.vardhan@gmail.com,+919876500027,,Vardhan Group,Ranchi,DID_NOT_CONNECT,varah_swamy,Ready,Busy asked to call later,ravi@team.com
+12/05/2026,Sneha Kulkarni,sneha.kulkarni@gmail.com,09876500028,,,Nashik,GOOD_LEAD_FOLLOW_UP,eden_park,2027,Wants 2BHK,priya@team.com
+2026-05-13,Manish Tiwari,manish.tiwari@gmail.com,9876500029,,Tiwari Estates,Varanasi,BAD_LEAD,leads_on_demand,,Location not preferred,neha@team.com
+2026-05-13 15:00:00,Divya Nair,divya.nair@gmail.com; divya.n@alt.com,+91 9876500031,9876500041,Nair Homes,Kochi,GOOD_LEAD_FOLLOW_UP,meridian_tower,2028,"Multiple emails and phones, high intent",ravi@team.com
+2026-05-14 10:25:00,Gaurav Sethi,gaurav.sethi@gmail.com,919876500032,,Sethi Realty,Amritsar,Interested,tower three,Q2 2028,Wants virtual tour,priya@team.com
+2026-05-14 12:35:00,Lakshmi Menon,lakshmi.menon@gmail.com,9876500033,,,Madurai,SALE_DONE,sarjapur_plots,Immediate,Agreement signed,neha@team.com
+2026-05-15,Vivek Anand,vivek.anand@gmail.com,+919876500034,,Anand Group,Vijayawada,DID_NOT_CONNECT,eden_park,Ready,Phone unreachable,ravi@team.com
+2026-05-15 14:10:00, No name blank,,,,Nameless Corp,Guwahati,,,,Row with no usable contact,priya@team.com
+2026-05-16 09:05:00,Simran Kaur,simran.kaur@gmail.com,09876500035,,Kaur Estates,Ludhiana,GOOD_LEAD_FOLLOW_UP,varah_swamy,2029,Prefers weekend calls,neha@team.com
+16/05/2026,Aakash Mehta,aakash.mehta@gmail.com,9876500037,9876500047,Mehta Group,Delhi,Hot Lead,meridian_tower,2027,Two numbers provided,ravi@team.com
+2026-05-17,Nisha Rao,nisha.rao@gmail.com,+91-98765-00038,,,Mysore,BAD_LEAD,leads_on_demand,,Just browsing,priya@team.com
+2026-05-17 11:55:00,Kunal Bhatia,kunal.bhatia@gmail.com,919876500039,,Bhatia Realty,Jodhpur,GOOD_LEAD_FOLLOW_UP,eden_park,2028,Wants floor plan PDF,neha@team.com
+2026-05-18 13:20:00,Ayesha Sheikh,ayesha.sheikh@gmail.com,9876500040,,Sheikh Homes,Aurangabad,SALE_DONE,sarjapur_plots,Immediate,"Deal done, referral promised",ravi@team.com
+2026-05-18 15:45:00,Contactless Lead,,,,Void Realty,Dehradun,Warm,,,No phone or email at all,priya@team.com
+2026-05-19,Rahul Dubey,rahul.dubey@gmail.com,+919876500042,,Dubey Group,Gwalior,Interested,tower one,Q4 2027,Asked about EMI options,neha@team.com
+19/05/2026,Sonal Desai,sonal.desai@gmail.com,09876500043,,,Vadodara,DID_NOT_CONNECT,eden_park,Ready,Call dropped,ravi@team.com
+2026-05-20 10:40:00,Yash Chauhan,yash.chauhan@gmail.com; yash.c@office.com,9876500044,9876500054,Chauhan Realty,Meerut,GOOD_LEAD_FOLLOW_UP,meridian_tower,2028,High intent multiple contacts,priya@team.com
+2026-05-20 12:15:00,Bhavna Rana,bhavna.rana@gmail.com,919876500045,,Rana Estates,Jalandhar,BAD_LEAD,leads_on_demand,,Not the right fit,neha@team.com
+2026-05-21,Dev Patel,dev.patel@gmail.com,+91 98765 00046,,,Anand,GOOD_LEAD_FOLLOW_UP,varah_swamy,2029,Wants site visit Saturday,ravi@team.com
+2026-05-21 14:30:00,Empty Row Two,,,,Nothing Realty,Shimla,,,,Skip candidate no contact,priya@team.com
+2026-05-22 09:50:00,Alok Nanda,alok.nanda@gmail.com,9876500048,,Nanda Group,Siliguri,SALE_DONE,sarjapur_plots,Immediate,Fully paid,neha@team.com
+22/05/2026,Rekha Pillai,rekha.pillai@gmail.com,+919876500049,,,Thrissur,Interested,eden_park,Jun 2027,Requested cost sheet,ravi@team.com
+2026-05-23,Suresh Kumar,suresh.kumar@gmail.com,09876500050,,Kumar Realty,Salem,GOOD_LEAD_FOLLOW_UP,meridian_tower,2028,Wants north-facing unit,priya@team.com
+2026-05-23 16:05:00,Tanvi Shah,tanvi.shah@gmail.com,9876500051,9876500061,Shah Homes,Bhavnagar,DID_NOT_CONNECT,varah_swamy,Ready,Two numbers both tried,neha@team.com
+2026-05-24 11:10:00,Final Skip,,,,Last Void Corp,Udaipur,,,,No email no phone final test row,ravi@team.com
