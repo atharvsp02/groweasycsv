@@ -25,13 +25,20 @@ const CONTROL: NavEntry[] = [
 ];
 
 function NavItem({ icon: Icon, label, active }: NavEntry) {
+  const base = "flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm";
+  if (active) {
+    return (
+      <div aria-current="page" className={`${base} bg-gray-100 text-gray-900 font-medium dark:bg-gray-800 dark:text-gray-100`}>
+        <Icon className="w-4 h-4 shrink-0" />
+        <span className="truncate">{label}</span>
+      </div>
+    );
+  }
   return (
-    <button
-      className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm transition-colors
-        ${active ? "bg-gray-100 text-gray-900 font-medium dark:bg-gray-800 dark:text-gray-100" : "text-gray-500 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"}`}>
+    <div className={`${base} cursor-default text-gray-400 dark:text-gray-500`}>
       <Icon className="w-4 h-4 shrink-0" />
       <span className="truncate">{label}</span>
-    </button>
+    </div>
   );
 }
 
