@@ -2,7 +2,7 @@
 import {
   LayoutDashboard, UserPlus, Users, MessageCircle, Users2, Radio,
   Megaphone, MessageSquare, PhoneCall, SlidersHorizontal, KeyRound,
-  Briefcase, Sprout, type LucideIcon,
+  Briefcase, type LucideIcon,
 } from "lucide-react";
 
 interface NavEntry { icon: LucideIcon; label: string; active?: boolean }
@@ -46,9 +46,7 @@ export function Sidebar() {
   return (
     <aside className="hidden md:flex w-64 shrink-0 flex-col gap-6 border-r border-gray-200 bg-white p-4 sticky top-0 h-screen self-start overflow-y-auto dark:border-gray-800 dark:bg-gray-900">
       <div className="flex items-center gap-2 px-2">
-        <div className="grid place-items-center w-8 h-8 rounded-lg bg-gradient-to-br from-teal-brand to-teal-brand-2 text-white">
-          <Sprout className="w-4 h-4" />
-        </div>
+        <img src="/favicon.ico" alt="GrowEasy" className="w-8 h-8 rounded-lg" />
         <span className="font-bold text-lg">GrowEasy</span>
       </div>
 

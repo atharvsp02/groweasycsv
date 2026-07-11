@@ -1,6 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
-import { Upload, Download, FileJson, Sprout } from "lucide-react";
+import { Upload, Download, FileJson } from "lucide-react";
 import { parseCsv } from "@/lib/csv";
 import { downloadRecordsCsv, downloadRecordsJson, downloadSkippedCsv } from "@/lib/export";
 import { Sidebar } from "@/app/components/Sidebar";
@@ -82,9 +82,7 @@ export default function Home() {
       <Sidebar />
       <main className="min-w-0 flex-1 p-4 md:p-8">
         <div className="mb-4 flex items-center gap-2 md:hidden">
-          <div className="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-teal-brand to-teal-brand-2 text-white">
-            <Sprout className="h-4 w-4" />
-          </div>
+          <img src="/favicon.ico" alt="GrowEasy" className="w-7 h-7 rounded-lg" />
           <span className="text-lg font-bold">GrowEasy</span>
         </div>
 
