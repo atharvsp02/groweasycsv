@@ -4,8 +4,8 @@ Upload any messy CSV of leads and this app uses an LLM to map arbitrary column l
 
 The hard part is not parsing CSV. It is reliably mapping unpredictable, inconsistent column names and value formats (Facebook exports, Google Ads exports, real-estate CRM dumps, hand-made spreadsheets) into one clean schema, and never trusting the model to enforce the rules that must always hold.
 
-**Live demo:** _add your Vercel URL here after deploy_
-**AI model:** Google `gemini-flash-latest` (default), or any OpenRouter model.
+**Live demo:** https://groweasycsvexport.vercel.app/
+**Default AI model:** OpenRouter `openai/gpt-4o-mini` (primary), with Gemini `gemini-2.5-flash-lite` as automatic fallback.
 
 ---
 
@@ -21,7 +21,7 @@ The hard part is not parsing CSV. It is reliably mapping unpredictable, inconsis
 - **Export** imported records as CSV (exact 15-field schema) or JSON, and skipped rows as CSV.
 - Fully responsive (desktop + mobile) with a light/dark theme.
 - Every field validated and normalized in code before it counts as imported.
-- Two LLM providers (Gemini and OpenRouter) behind one interface, with **automatic fallback**: if the primary is rate-limited, the batch transparently retries on the secondary.
+- Two LLM providers (OpenRouter and Gemini) behind one interface, with **automatic fallback**: if the primary is rate-limited, the batch transparently retries on the secondary.
 - **Dark mode** with a toggle, system-preference detection, and persisted choice (no flash on load).
 
 ---
@@ -46,7 +46,7 @@ The hard part is not parsing CSV. It is reliably mapping unpredictable, inconsis
 
 **Stage B, batched extraction (N rows per call).** The inferred mapping is passed as a hint (the model may override it per row), along with the raw rows, and the model returns structured records plus any rows it wants skipped. Output is forced to JSON and validated against a zod schema; a batch that returns unparseable output is retried, and a permanently failing batch marks its rows skipped rather than failing the whole import.
 
-Batches run through a small worker pool with a concurrency cap. Batch size (40) and concurrency (3) default to values tuned for the Gemini free tier (about 10 requests per minute), not just token cost. Both are configurable via env.
+Batches run through a small worker pool with a concurrency cap. Batch size (40) and concurrency (3) are configurable via env.
 
 ### Rules are enforced in code, never trusted to the model
 
@@ -58,9 +58,7 @@ A large file cannot be processed inside a single fast serverless response, and a
 
 ### Provider abstraction
 
-`lib/llm.ts` exposes one `LLMProvider` interface with two adapters: Gemini (via `@google/genai`, using JSON response mode) and OpenRouter (via the OpenAI SDK pointed at `https://openrouter.ai/api/v1`, using `response_format: json_object`). Both parse the model output and validate it against the same zod schema. `LLM_PROVIDER` picks the primary; when both keys are set, the other provider becomes an automatic fallback, so a rate-limited or failing primary does not fail the import. Batch retries are rate-limit-aware (longer backoff on HTTP 429).
-
-Note on the OpenRouter model: the default `OPENROUTER_MODEL` is `openai/gpt-4o-mini`, which works on a free OpenRouter balance. `google/gemini-2.5-flash` via OpenRouter reserves a large token budget and needs paid credits, so it is not a good free-tier fallback.
+`lib/llm.ts` exposes one `LLMProvider` interface with two adapters: OpenRouter (via the OpenAI SDK pointed at `https://openrouter.ai/api/v1`, using `response_format: json_object`) and Gemini (via `@google/genai`, using JSON response mode). Both parse the model output and validate it against the same zod schema. `LLM_PROVIDER` picks the primary; when both keys are set, the other provider becomes an automatic fallback, so a rate-limited or failing primary does not fail the import. Batch retries are rate-limit-aware (longer backoff on HTTP 429).
 
 ---
 
@@ -90,8 +88,8 @@ cp .env.example .env.local
 
 Then set at least one provider key in `.env.local`:
 
-- **Gemini (default, has a free tier):** get a key at https://aistudio.google.com/apikey and set `GEMINI_API_KEY`. Keep `LLM_PROVIDER=gemini`.
-- **OpenRouter (any hosted model):** get a key at https://openrouter.ai/keys, set `OPENROUTER_API_KEY`, `LLM_PROVIDER=openrouter`, and optionally `OPENROUTER_MODEL` (for example `anthropic/claude-3.5-sonnet` or `openai/gpt-4o-mini`).
+- **OpenRouter (recommended, default):** get a key at https://openrouter.ai/keys, set `OPENROUTER_API_KEY`. Keep `LLM_PROVIDER=openrouter`. Optionally change `OPENROUTER_MODEL` (default `openai/gpt-4o-mini`).
+- **Gemini (optional fallback):** get a key at https://aistudio.google.com/apikey and set `GEMINI_API_KEY` and optionally `GEMINI_MODEL` (default `gemini-2.5-flash-lite`).
 
 Optional tuning: `BATCH_SIZE` (default 40), `CONCURRENCY` (default 3).
 
@@ -149,7 +147,7 @@ app/
   page.tsx                   dashboard shell + modal + results orchestration
 lib/
   csv.ts                     CSV parsing (client + server)
-  llm.ts                     provider-agnostic client (Gemini + OpenRouter, with fallback)
+  llm.ts                     provider-agnostic client (OpenRouter + Gemini, with fallback)
   prompts.ts                 Stage A / Stage B prompt builders
   mapper.ts                  Stage A header inference
   extractor.ts               Stage B batch extraction + retry
@@ -166,9 +164,9 @@ samples/                     example CSVs
 ## Known limitations and tradeoffs
 
 - **Stateless.** No database or persistence; each import is independent. This keeps the deploy simple and was a deliberate choice for the assignment.
-- **Very large files.** The whole file is one streamed request bounded by the 60s Vercel Hobby window. Combined with the Gemini free tier (about 10 requests per minute), files in the many-hundreds-to-1000+ rows can approach that limit. The production path is to chunk the file into sequential streamed segments on the client and aggregate; that is noted but not built here.
+- **Very large files.** The whole file is one streamed request bounded by the 60s Vercel Hobby window. Files in the many-hundreds-to-1000+ rows can approach that limit. The production path is to chunk the file into sequential streamed segments on the client and aggregate; that is noted but not built here.
 - **Non-Indian phone formats.** Country-code splitting is tuned for Indian numbers (10-digit local part). Numbers from locales with a different local-number length are handled approximately.
-- **Free-tier rate limits.** Gemini's free tier allows about 10 requests/minute. Heavy back-to-back imports can hit that limit; with both provider keys set, the app automatically falls back to OpenRouter so imports still complete (Gemini gives the best extraction quality, so it stays the primary).
+- **Free-tier rate limits.** OpenRouter's free tier offers affordable credits; if rate limits are hit, the app automatically falls back to Gemini so imports still complete.
 
 ---
 
@@ -176,5 +174,4 @@ samples/                     example CSVs
 
 1. Push this repository to GitHub.
 2. Import the repo in Vercel.
-3. Set the environment variables from `.env.example` (`LLM_PROVIDER` and the matching provider key; optionally `GEMINI_MODEL` / `OPENROUTER_MODEL`, `BATCH_SIZE`, `CONCURRENCY`).
-4. Deploy, then add the live URL to the top of this README.
+3. Set the environment variables from `.env.example` (`LLM_PROVIDER`, at least one provider key; optionally `OPENROUTER_MODEL` / `GEMINI_MODEL`, `BATCH_SIZE`, `CONCURRENCY`).
