@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-coral: #ff7a59;
+  --color-coral-2: #ff9472;
+  --color-teal-brand: #17b197;
+  --color-teal-brand-2: #22c55e;
+  --color-page: #f7f8fa;
+  --color-ink: #1f2937;
+}
+
+@layer base {
+  html, body { height: 100%; }
+  body {
+    background: var(--color-page);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .dark body { background: #0b0f17; color: #e5e7eb; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
